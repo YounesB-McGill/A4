@@ -11,4 +11,8 @@ abstract public class UnaryExpression {
 	public UnaryExpression(TLExpression expr) {
 		this.expression = expr;
 	}
+	
+	public TLExpression getExpression() {
+		return expression;
+	}
 }
