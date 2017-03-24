@@ -10,8 +10,14 @@ public class IfAndOnlyIfExpression extends BinaryExpression implements TLExpress
 
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Create this method
-		return false;
+	    ImpliesExpression implLeft = new ImpliesExpression(this.leftExpression, this.rightExpression);
+	    ImpliesExpression implRight = new ImpliesExpression(this.rightExpression, this.leftExpression);
+	    AndExpression andExpr = new AndExpression(implLeft, implRight);
+        if(andExpr.evaluate(trajectory)){
+            return true;
+        } else {
+            return false;
+        }
 	}
 
 }

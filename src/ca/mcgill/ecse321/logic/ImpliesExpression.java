@@ -9,8 +9,13 @@ public class ImpliesExpression extends BinaryExpression implements TLExpression 
 	}
 
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
-		return false;
+	    NotExpression notLeft = new NotExpression(this.leftExpression);
+	    OrExpression orExpr = new OrExpression(notLeft, this.rightExpression);
+        if(orExpr.evaluate(trajectory)){
+            return true;
+        } else {
+            return false;
+        }
 	}
 
 }
