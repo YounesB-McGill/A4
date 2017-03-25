@@ -12,7 +12,7 @@ public class NextExpression extends UnaryExpression implements TLExpression {
 	public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Create this method
 		// leave it for now
-		return false;
+		return true;
 	}
 
 }
