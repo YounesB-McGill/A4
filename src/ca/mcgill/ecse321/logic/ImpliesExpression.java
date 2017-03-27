@@ -8,9 +8,18 @@ public class ImpliesExpression extends BinaryExpression implements TLExpression 
 		super(leftExpr,rightExpr);
 	}
 
+	// 746205 mod 6 = 3, hence this method is implemented
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
-		return false;
+		TLExpression leftExp = this.getLeftExpression(); 
+		TLExpression rightExp = this.getRightExpression(); 
+		
+		// avoiding to call evaluate on a null object
+		if(leftExp == null || rightExp == null) {
+			return false; 
+		} else {
+			// (a implies b) reduces to (not(a) or b)
+			return (!(leftExp.evaluate(trajectory)) || rightExp.evaluate(trajectory));
+		}
 	}
 
 }
