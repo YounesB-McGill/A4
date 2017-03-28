@@ -1,5 +1,6 @@
 package ca.mcgill.ecse321.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FinallyExpression extends UnaryExpression implements TLExpression {
@@ -10,7 +11,13 @@ public class FinallyExpression extends UnaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
+		List<State> trajectory1 = new ArrayList<State>(trajectory);
+		for(State s : trajectory){
+			if(this.getExpression().evaluate(trajectory1)){
+				return true;
+			}
+			trajectory1.remove(0);
+		}
 		return false;
 	}
 

@@ -1,6 +1,6 @@
 package ca.mcgill.ecse321.logic;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
