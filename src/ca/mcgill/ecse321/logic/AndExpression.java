@@ -9,11 +9,8 @@ public class AndExpression extends BinaryExpression implements TLExpression {
 	}
 	
 	public boolean evaluate(List<? extends State> trajectory) {
-		if ( (leftExpression != null) && (rightExpression != null) ) {
-			return leftExpression.evaluate(trajectory) && rightExpression.evaluate(trajectory);
-		} else {
-			return false;		
-		}
+		// TODO Complete this method
+		return false;
 	}
 
 }

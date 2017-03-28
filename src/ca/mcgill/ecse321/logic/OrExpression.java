@@ -10,11 +10,8 @@ public class OrExpression extends BinaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		if ( (leftExpression != null) && (rightExpression != null) ) {
-			return leftExpression.evaluate(trajectory) || rightExpression.evaluate(trajectory);
-		} else {
-			return false;		
-		}
+		// TODO Complete this method
+		return false;
 	}
 
 }
