@@ -10,7 +10,9 @@ public class IfAndOnlyIfExpression extends BinaryExpression implements TLExpress
 
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Create this method
+		if ((leftExpression != null) && (rightExpression != null)) {
+			return ((!leftExpression.evaluate(trajectory) && !rightExpression.evaluate(trajectory)) || (leftExpression.evaluate(trajectory) && rightExpression.evaluate(trajectory)));
+		}
 		return false;
 	}
 
