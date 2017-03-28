@@ -9,8 +9,11 @@ public class ImpliesExpression extends BinaryExpression implements TLExpression 
 	}
 
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
-		return false;
+		
+		if(this.leftExpression.evaluate(trajectory) && !(this.rightExpression.evaluate(trajectory))){
+			return false;
+		}
+		return true;
 	}
 
 }
