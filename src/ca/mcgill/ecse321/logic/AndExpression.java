@@ -8,9 +8,15 @@ public class AndExpression extends BinaryExpression implements TLExpression {
 		super(leftExpr,rightExpr);
 	}
 	
-	public boolean evaluate(List<? extends State> trajectory) {
+	@Override
+    public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Complete this method
-		return false;
+	    
+	    if(leftExpression!= null && rightExpression != null) {
+	        return leftExpression.evaluate(trajectory) && rightExpression.evaluate(trajectory);
+	    }else {
+	        return false;
+	    }
 	}
 
 }
