@@ -10,13 +10,12 @@ public class GloballyExpression extends UnaryExpression implements TLExpression 
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		boolean globally = true;
 		for(int i=0; i<trajectory.size();i++){
-			if(trajectory.get(i)!=false){
-				globally = false;
+			if(!expression.evaluate(trajectory.subList(i, i+1))){
+				return false;
 			}
 		}
-		return ;
+		return true;
 	}
 
 }
