@@ -10,8 +10,14 @@ public class NextExpression extends UnaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Create this method
-		return false;
+		trajectory.remove(0);
+		State nextState = trajectory.get(0);
+		if (nextState ==null){
+			return false;
+		}
+		else{
+			return this.getExpression().evaluate(trajectory);
+		}
 	}
 
 }
