@@ -9,8 +9,17 @@ public class ImpliesExpression extends BinaryExpression implements TLExpression 
 	}
 
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
-		return false;
-	}
+		// TODO Create this method
+		//last 6 digits of student ID = 637353 rem mod 6 = 3
+		
+		TLExpression leftExpr = this.getLeftExpression();
+		TLExpression rightExpr = this.getRightExpression();
 
+		if(leftExpr==null || rightExpr==null){ // take inconsideration null case
+			return false;
+		} else {
+			// A implies B is also (not A) or B
+			return(!(leftExpr.evaluate(trajectory)) || rightExpr.evaluate(trajectory));
+		}
+	}
 }
