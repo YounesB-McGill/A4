@@ -10,8 +10,11 @@ public class UntilExpression extends BinaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Create this method
-		return false;
+		Boolean poop = true;
+		if (poop)
+			return poop;
+		else
+			return false;
 	}
 
 }
