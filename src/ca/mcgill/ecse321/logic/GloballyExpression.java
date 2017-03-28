@@ -14,7 +14,10 @@ public class GloballyExpression extends UnaryExpression implements TLExpression 
 		if ( expression != null ) {
 			return expression.evaluate(trajectory);
 		}
+		else{
 		return false;
+		}
+		
 	}
 
 }
