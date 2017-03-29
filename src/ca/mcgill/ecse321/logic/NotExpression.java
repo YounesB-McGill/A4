@@ -9,8 +9,16 @@ public class NotExpression extends UnaryExpression implements TLExpression {
 	}
 	
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
-		return false;
+		TLExpression subExpr = this.getExpression();
+		if (subExpr == null) {
+			return false;
+		} else {
+			if (subExpr.evaluate(trajectory)) {
+				return false;
+			} else {
+				return true;
+			}
+		}
 	}
 
 }
