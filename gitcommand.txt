@@ -1,0 +1,19 @@
+ECSE321 Assignment 4
+
+Git commands
+
+1. Create a new branch named as feature/YourMcGillID:
+
+cd /c/Users/Lenovo/workspace321
+mkdir A4
+cd A4
+git init 
+git pull https://github.com/ECSE321-Winter2017-McGill/Assignment04
+git checkout -b feature/260681484
+git branch
+git add .
+git commit -m "Younes' branch has arrived! Cheers!"
+git push origin feature/260681484
+
+2. 
+
