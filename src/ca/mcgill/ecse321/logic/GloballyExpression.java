@@ -24,6 +24,7 @@ public class GloballyExpression extends UnaryExpression implements TLExpression 
 		    	}
 		   }
 		}
+		
 		return true;
 	}
 }
