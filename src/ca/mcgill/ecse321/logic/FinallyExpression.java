@@ -10,8 +10,19 @@ public class FinallyExpression extends UnaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
+		int i = 0;
+		while(i < trajectory.size()){
+			
+			if (this.getExpression().evaluate(trajectory.subList(i, trajectory.size()))){
+				return true;
+			}
+			else{
+				i++;
+			}
+			
+		}
 		return false;
+
 	}
 
 }
