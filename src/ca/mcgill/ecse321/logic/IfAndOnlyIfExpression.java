@@ -11,6 +11,8 @@ public class IfAndOnlyIfExpression extends BinaryExpression implements TLExpress
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Create this method
+
+		
 		return false;
 	}
 
