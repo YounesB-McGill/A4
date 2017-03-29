@@ -7,11 +7,17 @@ public class FinallyExpression extends UnaryExpression implements TLExpression {
 	public FinallyExpression(TLExpression expr) {
 		super(expr);
 	}
-	
+
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
+		if (expression != null){
+			for(int i = 0; i < trajectory.size(); i++){
+				if(expression.evaluate(trajectory.subList(i, trajectory.size()-1))){
+					return true;
+				}
+			}
+
+		}
 		return false;
 	}
-
 }
