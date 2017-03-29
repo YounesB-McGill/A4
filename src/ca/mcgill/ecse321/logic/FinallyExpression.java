@@ -10,7 +10,10 @@ public class FinallyExpression extends UnaryExpression implements TLExpression {
 	
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
+		// This is the method I am supposed to implement
+		// I do not have the time so I will be skipping the
+		// implementation but still doing the rest of the assignment
+		// as mentioned as an option on MyCourses
 		return false;
 	}
 
