@@ -11,24 +11,18 @@ public class IfAndOnlyIfExpression extends BinaryExpression implements TLExpress
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Create this method
-		if(imply(leftExpr, rightExpr) && imply(leftExpr, rightExpr)){
+		TLExpression leftExpr = this.getLeftExpression();
+		TLExpression rightExpr = this.getRightExpression();
+		if(imply(leftExpr, rightExpr, trajectory) && imply(rightExpr, leftExpr, trajectory)){
 			return true;
 		} else 
 			return false;		
 	}
 
-	public boolean imply(TLExpression leftExpr, TLExpression rightExpr) {
-		if(/* leftExpre == TRUE && rightExpr == TRUE */){
-			return true;
-		} else if(/* leftExpre == TRUE && rightExpr == FALSE */){
-			return false;
-		} else if(/* leftExpre == FALSE && rightExpr == TRUE */){
-			return true;
-		} else if(/* leftExpre == FALSE && rightExpr == FALSE */){
-			return true;
-		} else {
-			// throw new InvalidExpression();
-		}
-
+	public boolean imply(TLExpression leftExpr, TLExpression rightExpr, List<? extends State> trajectory) {
+		NotExpression notLeftExpr = new NotExpression(leftExpr);
+		OrExpression implies = new OrExpression(notLeftExpr, rightExpr);
+		
+		return implies.evaluate(trajectory);
 	}
 }
