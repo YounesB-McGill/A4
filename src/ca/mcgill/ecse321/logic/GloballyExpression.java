@@ -11,7 +11,14 @@ public class GloballyExpression extends UnaryExpression implements TLExpression 
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Create this method
+		if ( expression != null ) {
+			return expression.evaluate(trajectory);
+		}
+		else{
 		return false;
+		}
+		
 	}
 
 }
+
