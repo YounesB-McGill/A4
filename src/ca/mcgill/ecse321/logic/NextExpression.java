@@ -11,6 +11,8 @@ public class NextExpression extends UnaryExpression implements TLExpression {
 	@Override
 	public boolean evaluate(List<? extends State> trajectory) {
 		// TODO Create this method
+		
+		//Sorry I give it up since lots of projects due in final period
 		return false;
 	}
 
