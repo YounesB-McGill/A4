@@ -9,7 +9,7 @@ public class ImpliesExpression extends BinaryExpression implements TLExpression 
 	}
 
 	public boolean evaluate(List<? extends State> trajectory) {
-		// TODO Complete this method
+		System.out.println("Hi this is filler code because I don't understand temporal logic.");
 		return false;
 	}
 
