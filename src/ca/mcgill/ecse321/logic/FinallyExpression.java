@@ -20,7 +20,7 @@ public class FinallyExpression extends UnaryExpression implements TLExpression {
 					return true;
 				}
 		}
-		return true;
+		return false;
 	}
 	}
 
